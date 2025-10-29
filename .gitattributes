@@ -1,5 +1,5 @@
 *.dart linguist-language=Dart
-*.kt linguist-language=Kotlin
-*.java linguist-language=Java
-*.swift linguist-language=Swift
-*.gradle linguist-language=Groovy
+
+
+android/* linguist-vendored
+ios/* linguist-vendored
