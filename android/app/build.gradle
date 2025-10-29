@@ -1,0 +1,52 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.harshRajpurohit.we_chat"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion "27.0.12077973" // 👈 نسخه مورد نیاز پلاگین‌ها
+
+    defaultConfig {
+        applicationId = "com.harshRajpurohit.we_chat"
+        minSdk = 23          // 👈 تغییر به 23
+        targetSdk = 35
+         versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17  // 👈 Java 17
+        targetCompatibility = JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled = true  // 👈 فعال کردن desugaring
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
+
+    // 👇 این خط برای flutter_local_notifications و پلاگین‌های Firebase ضروری است
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.4"
+}
+
+flutter {
+    source = "../.."
+}

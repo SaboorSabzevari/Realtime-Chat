@@ -1,0 +1,1 @@
+C:\Users\Sabzevari\AndroidStudioProjects\ApnaChat-Realtime-Chat-App-In-Flutter-Firebase\build\app\intermediates\cxx\Debug\6h5x2o2t\obj\armeabi-v7a
